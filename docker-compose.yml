@@ -5,6 +5,10 @@ services:
     restart: always
     image: actionml/harness:develop
     container_name: harness
+    ulimits:
+      nofile:
+        soft: 65536
+        hard: 65536
     ports:
       - "9090:9090"
     environment:
